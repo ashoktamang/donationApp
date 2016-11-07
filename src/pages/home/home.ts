@@ -4,6 +4,7 @@ import { ModalController } from 'ionic-angular';
 import { CollegeDetailsPage } from '../college-details/college-details';
 
 @Component({
+  selector: 'page-home',
   templateUrl: 'home.html'
 })
 

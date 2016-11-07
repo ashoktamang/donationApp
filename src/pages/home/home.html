@@ -4,17 +4,11 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <ion-card>
-    <ion-card-header>
-      Colleges and Schools
-    </ion-card-header>
-
-    <ion-list>
-      <button ion-item *ngFor="let college of colleges; let i = index" (click)="openDetailsModal({index: i})">
-        <ion-icon name="cash" item-left></ion-icon>
-        {{ college.title }}
-      </button>
-    </ion-list>
+<ion-content class="card-backgeround-page">
+  <ion-card *ngFor="let college of colleges; let i = index" (click)="openDetailsModal({index: i})">
+    <img src="../assets/img/howard-watermark.png"/>
+    <div class="card-title"> {{ college.title }} </div>
   </ion-card>
 </ion-content>
+
+
