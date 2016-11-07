@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Welcome to HU Donate!</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card>
+    <ion-card-header>
+      Colleges and Schools
+    </ion-card-header>
+
+    <ion-list>
+      <button ion-item *ngFor="let college of colleges" (click)="showDetailsPage(college)">
+        <ion-icon name="cash" item-left></ion-icon>
+        {{ college.title }}
+      </button>
+    </ion-list>
+  </ion-card>
+</ion-content>
