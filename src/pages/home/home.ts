@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { NavController} from 'ionic-angular';
+import { ModalController } from 'ionic-angular';
 import { CollegeDetailsPage } from '../college-details/college-details';
 
 @Component({
@@ -10,7 +10,7 @@ import { CollegeDetailsPage } from '../college-details/college-details';
 export class HomePage {
   colleges = [];
 
-  constructor(public navCtrl: NavController) {
+  constructor(public modalCtrl: ModalController) {
     this.colleges = [
       {
         'title': 'College of Arts and Sciences',
@@ -54,8 +54,9 @@ export class HomePage {
     ];
   }
 
-  showDetailsPage(item) {
-    this.navCtrl.push(CollegeDetailsPage, { college: item });
+  openDetailsModal(index) {
+    let modal = this.modalCtrl.create(CollegeDetailsPage, index);
+    modal.present();
   }
 
 }

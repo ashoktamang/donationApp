@@ -11,7 +11,7 @@
     </ion-card-header>
 
     <ion-list>
-      <button ion-item *ngFor="let college of colleges" (click)="showDetailsPage(college)">
+      <button ion-item *ngFor="let college of colleges; let i = index" (click)="openDetailsModal({index: i})">
         <ion-icon name="cash" item-left></ion-icon>
         {{ college.title }}
       </button>
