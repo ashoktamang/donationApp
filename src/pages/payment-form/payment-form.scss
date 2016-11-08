@@ -1,0 +1,15 @@
+page-payment-form {
+    .main-wrap {
+        /*max-width:250px;*/
+        margin:auto
+    }
+    .row, .col {
+        text-align:center;
+    }
+
+    .col {
+        margin:5px !important;
+        border-radius: 8px !important;
+        padding:15px 0px !important;
+    }
+}
