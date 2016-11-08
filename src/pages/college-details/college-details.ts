@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 import { Platform, ViewController, NavController, NavParams } from 'ionic-angular';
-import { DonationPage } from '../donation/donation';
+import { PaymentFormPage } from '../payment-form/payment-form';
 
 @Component({
   templateUrl: 'college-details.html'
@@ -75,7 +75,8 @@ export class CollegeDetailsPage {
   }
 
   goDonate(item) {
-    this.navCtrl.push(DonationPage, { college: item });
+    this.navCtrl.push(PaymentFormPage, { college: item });
+    this.viewCtrl.dismiss();
   }
   
   dismiss() {
