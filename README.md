@@ -8,7 +8,10 @@ It is a SWE project. DonationApp is a web-based hybrid app built on [Ionic 2 Fra
 2. `npm install -g ionic cordova`
 3. `git clone https://github.com/ashoktamang/donationApp.git`
 4. `cd <path/to/project/directory>`
-5. ionic serve
+5. `npm install`
+6. ionic serve
+
+### Note: Please use `sudo` if `npm` command doesn't work for non-root user. It should work though.
 
 ## How to Provide Feedback
 * Just open an issue in the repo. I will look at it.
