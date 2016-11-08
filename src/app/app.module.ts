@@ -4,7 +4,9 @@ import { MyApp } from './app.component';
 import { AboutPage } from '../pages/about/about';
 import { HomePage } from '../pages/home/home';
 import { CollegeDetailsPage } from '../pages/college-details/college-details';
+import { PaymentFormPage } from '../pages/payment-form/payment-form';
 import { DonationPage } from '../pages/donation/donation';
+import { ThankYouPage } from '../pages/thank-you/thank-you';
 
 @NgModule({
   declarations: [
@@ -12,7 +14,9 @@ import { DonationPage } from '../pages/donation/donation';
     AboutPage,
     HomePage,
     CollegeDetailsPage,
-    DonationPage
+    PaymentFormPage,
+    DonationPage,
+    ThankYouPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -23,7 +27,9 @@ import { DonationPage } from '../pages/donation/donation';
     AboutPage,
     HomePage,
     CollegeDetailsPage,
-    DonationPage
+    PaymentFormPage,
+    DonationPage,
+    ThankYouPage
   ],
   providers: []
 })

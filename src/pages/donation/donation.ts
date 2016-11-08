@@ -8,11 +8,4 @@ import { NavParams } from 'ionic-angular';
 })
 
 export class DonationPage {
-
-  college;
-
-  constructor (params: NavParams) {
-    this.college = params.data.college;
-  }
-
 }
