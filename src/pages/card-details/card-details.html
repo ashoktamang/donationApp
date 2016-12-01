@@ -1,11 +1,35 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>CD</ion-title>
+    <ion-title>Payment Info</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+  <form (ngSubmit)="donate()">
+      <ion-item>
+        <ion-label stacked>Account Number</ion-label>
+        <ion-input type="number" [(ngModel)]="card.number" name="number"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>Expiration Data</ion-label>
+        <ion-input type="date" [(ngModel)]="card.expiration" name="expiration"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>CVV</ion-label>
+        <ion-input type="number" [(ngModel)]="card.cvv" name="cvv"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label stacked>Name</ion-label>
+        <ion-input type="text" [(ngModel)]="donor.name" name="donor-name"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>Email</ion-label>
+        <ion-input type="email" [(ngModel)]="donor.email" name="donor-email"></ion-input>
+      </ion-item>
+      <button ion-button type="submit" block>Donate</button>
+    </form>
 </ion-content>

@@ -1,9 +1,32 @@
 <ion-header>
-    <ion-title> Blah </ion-title>
+  <ion-toolbar>
+    <ion-title>
+      Description
+    </ion-title>
+    <ion-buttons start>
+      <button ion-button (click)="dismiss()">
+        <!--<ion-icon name="ion-android-arrow-back" showWhen="android,windows"></ion-icon>
+        <ion-icon name="ion-ios-arrow-back" showWhen="ios"></ion-icon>-->
+        <ion-icon name="md-close" stay-left></ion-icon>-->
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
 </ion-header>
 <ion-content padding>
-    {{ project.title }}
-    <ion-item> {{ project.description }} </ion-item>
-    <ion-item> {{ project.donationAmount }} </ion-item>
-
+  <ion-card>
+    <ion-item inset>
+      {{ project.title }}
+    </ion-item>
+    <ion-card-content>
+      {{ project.description }}
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-header>
+    Remaining Donation Goals ${{ project.goal - project.donation_amount }}
+    </ion-card-header>
+  </ion-card>
+    <ion-footer>
+        <button ion-button item-left full large (click)="goDonate(college, project)"> Donate </button>
+    </ion-footer>
 </ion-content>

@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-
-import { ModalController } from 'ionic-angular';
+import { ViewController, NavController } from 'ionic-angular';
 import { CollegeDetailsPage } from '../college-details/college-details';
 
 import { FbDatabase } from '../../providers/fb-database';
@@ -14,7 +13,7 @@ import { FbDatabase } from '../../providers/fb-database';
 export class HomePage {
   colleges = [];
 
-  constructor(public modalCtrl: ModalController, private _data: FbDatabase) {
+  constructor(public viewCtrl: ViewController, public navCtrl: NavController, private _data: FbDatabase) {
     // this.colleges = [
     //   {
     //     'title': 'College of Arts and Sciences',
@@ -56,14 +55,16 @@ export class HomePage {
     //     'title': 'School of Social Work',
     //   }
     // ];
-    setTimeout(this._data.db.on('value', data => {
-      this.colleges = data.val();
-    }), 0)
+    
+    this._data.db.once('value').then((snapshot) => {
+      this.colleges = snapshot.val();
+    })
+
+    
   }
 
   openDetailsModal(college) {
-    let modal = this.modalCtrl.create(CollegeDetailsPage, college);
-    modal.present();
+    this.navCtrl.push(CollegeDetailsPage, college);
   }
 
   addcollege() {

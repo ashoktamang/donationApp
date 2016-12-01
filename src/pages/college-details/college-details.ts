@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { Platform, ViewController, NavController, NavParams } from 'ionic-angular';
+import { Platform, ViewController, NavController, NavParams, ModalController } from 'ionic-angular';
 import { PaymentFormPage } from '../payment-form/payment-form';
 import { ProjectDetailsPage } from '../project-details/project-details';
 
@@ -12,6 +12,7 @@ export class CollegeDetailsPage {
   college;
 
   constructor (
+    public modalCtrl: ModalController,
     public navCtrl: NavController, 
     public params: NavParams,
     public viewCtrl: ViewController,
@@ -77,11 +78,11 @@ export class CollegeDetailsPage {
 
   goDonate(item) {
     this.navCtrl.push(PaymentFormPage, { college: item });
-    this.viewCtrl.dismiss();
   }
 
   goToProjectDetails(college, project) {
-    this.navCtrl.push(ProjectDetailsPage, { college: college, project: project });
+    let modal = this.modalCtrl.create(ProjectDetailsPage, { college, project });
+    modal.present();
   }
   
   dismiss() {
