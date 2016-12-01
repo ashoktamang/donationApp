@@ -4,10 +4,13 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content class="card-backgeround-page">
+<ion-content class="card-background-page">
   <ion-card *ngFor="let college of colleges; let i = index" (click)="openDetailsModal({index: i})">
+      <ion-card-header class="card-header">
+          {{ college.title }}
+      </ion-card-header>
+
       <img src="{{ college.image }}"/>
-    <div class="card-title"> {{ college.title }} </div>
   </ion-card>
   <button (click)="addcollege()">Clcick</button>
 </ion-content>
