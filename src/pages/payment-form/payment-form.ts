@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { ModalController, NavParams, NavController, AlertController, ActionSheetController, LoadingController } from 'ionic-angular';
 import { CardDetailsPage } from '../card-details/card-details';
 
+import validator from 'validator';
+
 /*
   Generated class for the PaymentForm page.
 
@@ -31,17 +33,40 @@ export class PaymentFormPage {
     this.numpad = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0', 'Delete'];
   }
 
-  ionViewDidLoad() {
-    console.log('Hello PaymentForm Page');
-  }
-
   // TODO: Validate the amount input after '.' is placed.
   getAmount(numAsString) {
+    if (this.donationAmount == 0 && numAsString == '.') {
+      return;
+    }
+    if (numAsString == '.') {
+      if (this.donationAmount[this.donationAmount.length - 1] == '.') {
+        return;
+      }
+    } else {
+      if (this.donationAmount[this.donationAmount.length - 3] == '.') {
+        return;
+      }
+    }
+    //Max Amount = $5000
+    if (this.donationAmount.length == 7) {
+      return;
+    }
+    if (this.donationAmount.length == 4 && this.donationAmount.indexOf('.') < 0 && numAsString != '.') {
+      return;
+    }
     this.donationAmount = (this.donationAmount == '0') ? numAsString : this.donationAmount + numAsString;
+    console.log(validator.isCurrency(this.donationAmount));
   }
 
   delete() {
-    this.donationAmount = (this.donationAmount.length == 0) ? '0' : this.donationAmount.slice(0, -1);
+    if (this.donationAmount == '0') {
+      return;
+    } 
+    if (this.donationAmount.length == 1) {
+      this.donationAmount = '0'
+    } else {
+      this.donationAmount = (this.donationAmount.length == 0) ? '0' : this.donationAmount.slice(0, -1);
+    }
   }
 
   donate() {

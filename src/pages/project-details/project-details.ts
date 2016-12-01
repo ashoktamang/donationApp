@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, ViewController } from 'ionic-angular';
+
+import { PaymentFormPage } from '../payment-form/payment-form';
 
 @Component({
   selector: 'project-details',
@@ -11,14 +13,19 @@ export class ProjectDetailsPage {
   constructor(
     public navCtrl: NavController, 
     public params: NavParams,
+    public viewCtrl: ViewController
   ) {
     this.college = this.params.get('college');
     this.project = this.params.get('project');
-    console.log(this.project);
+    console.log('project', this.project);
   }
 
-  ionViewDidLoad() {
-    console.log('Hello ThankYou Page');
+  dismiss() {
+    this.viewCtrl.dismiss();
+  }
+
+  goDonate(college, project) {
+    this.navCtrl.push(PaymentFormPage, { college: college, project: project });
   }
 
 }

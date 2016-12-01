@@ -13,9 +13,11 @@
 </ion-header>
 
 <ion-content padding>
-  
   <div class="amount">
-    $ {{ donationAmount }}
+   $
+  </div>
+  <div class="amount">
+   {{ donationAmount }}
   </div>
   <ion-card>
     <ion-grid>
@@ -37,7 +39,7 @@
       <ion-row center>
         <ion-col width-33 ion-button clear (click)="getAmount('.')">.</ion-col>
         <ion-col width-33 ion-button clear (click)="getAmount('0')">0</ion-col>
-        <ion-col width-33 ion-button clear class="icon ion-backspace" (click)="delete()"></ion-col>
+        <ion-col width-33 ion-button clear class="icon ion-backspace" (click)="delete()">DEL</ion-col>
       </ion-row>
     </ion-grid>
   </ion-card>
