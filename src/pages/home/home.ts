@@ -56,9 +56,9 @@ export class HomePage {
     //     'title': 'School of Social Work',
     //   }
     // ];
-    this._data.db.on('value', data => {
+    setTimeout(this._data.db.on('value', data => {
       this.colleges = data.val();
-    })
+    }), 0)
   }
 
   openDetailsModal(index) {
