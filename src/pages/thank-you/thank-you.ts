@@ -16,6 +16,7 @@ import { HomePage } from '../home/home';
 export class ThankYouPage {
   college;
   donationAmount;
+  project;
   constructor(
     public navCtrl: NavController, 
     public params: NavParams,
@@ -23,7 +24,9 @@ export class ThankYouPage {
     public platform: Platform
   ) {
     this.college = this.params.get('college');
+    console.log(this.college);
     this.donationAmount = this.params.get('donationAmount');
+    this.project = this.params.get('project');
   }
 
   ionViewDidLoad() {

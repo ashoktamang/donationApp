@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ModalController, NavParams, NavController, AlertController, ActionSheetController, LoadingController } from 'ionic-angular';
+import { ViewController, NavParams, NavController, ActionSheetController, LoadingController } from 'ionic-angular';
 import { CardDetailsPage } from '../card-details/card-details';
 
 import validator from 'validator';
@@ -19,15 +19,17 @@ export class PaymentFormPage {
   college;
   numpad;
   donationAmount; // Minimum donation amount is $1.
+  project;
 
   constructor (
     public params: NavParams,
-    public navCtrl: NavController, 
-    public alertCtrl: AlertController,
+    public navCtrl: NavController,
+    public viewCtrl: ViewController, 
     public actionSheetCtrl: ActionSheetController,
     public loadingCtrl: LoadingController
   ) {
     this.college = this.params.data.college;
+    this.project = this.params.data.project;
     this.donationAmount = '0';
 
     this.numpad = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0', 'Delete'];
@@ -70,22 +72,22 @@ export class PaymentFormPage {
   }
 
   donate() {
-    // let modal = this.modalCtrl.create(ThankYouPage, { college: this.college, donationAmount: this.donationAmount });
-    // modal.present();
+    this.navCtrl.push(CardDetailsPage);
+    console.log(this.navCtrl);
     let actionSheet = this.actionSheetCtrl.create({
-      title: 'Donate',
+      title: 'Choose your payment method.',
       buttons: [
         {
           text: 'Visa/MasterCard',
           handler: () => {
-            this.navCtrl.push(CardDetailsPage, { college: this.college, donationAmount: this.donationAmount });
+            this.navCtrl.push(CardDetailsPage);
             console.log('visa clicked.');
           }
         },
         {
           text: 'PayPal',
           handler: () => {
-            this.navCtrl.push(CardDetailsPage, { college: this.college, donationAmount: this.donationAmount });
+            this.navCtrl.push(CardDetailsPage, { college: this.college, project: this.project, donationAmount: this.donationAmount });
             console.log('PayPal clicked.');
           }
         }
