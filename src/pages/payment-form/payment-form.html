@@ -12,20 +12,20 @@
 
 </ion-header>
 
-
 <ion-content padding>
-  <ion-card>
+  
+  <div class="amount">
     $ {{ donationAmount }}
-  </ion-card>
+  </div>
   <ion-card>
     <ion-grid>
       <ion-row center>
-        <ion-col width-33 ion-button clear (click)="getAmount('1')">1</ion-col>
+        <ion-col width-33 ion-button clear font-class (click)="getAmount('1')">1</ion-col>
         <ion-col width-33 ion-button clear (click)="getAmount('2')">2</ion-col>
         <ion-col width-33 ion-button clear (click)="getAmount('3')">3</ion-col>
       </ion-row>
       <ion-row center>
-        <ion-col width-33 ion-button clear (click)="getAmount('4')">4</ion-col>
+        <ion-col width-33 ion-button clear font-class (click)="getAmount('4')">4</ion-col>
         <ion-col width-33 ion-button clear (click)="getAmount('5')">5</ion-col>
         <ion-col width-33 ion-button clear (click)="getAmount('6')">6</ion-col>
       </ion-row>
@@ -37,9 +37,14 @@
       <ion-row center>
         <ion-col width-33 ion-button clear (click)="getAmount('.')">.</ion-col>
         <ion-col width-33 ion-button clear (click)="getAmount('0')">0</ion-col>
-        <ion-col width-33 ion-button clear (click)="delete()">Delete</ion-col>
+        <ion-col width-33 ion-button clear class="icon ion-backspace" (click)="delete()"></ion-col>
       </ion-row>
     </ion-grid>
   </ion-card>
-  <button ion-button color="secondary" round (click)="donate()">Donate Now!</button>
+  <!--<button ion-button color="secondary" round (click)="donate()">Donate Now!</button>-->
 </ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-title color="secondary" (click)="donate()">Donate Now</ion-title>
+  </ion-toolbar>
+</ion-footer>

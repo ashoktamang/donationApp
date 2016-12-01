@@ -12,4 +12,30 @@ page-payment-form {
         border-radius: 8px !important;
         padding:15px 0px !important;
     }
+
+    .amount {
+        font-size: 8rem;
+        text-align: center;
+        font-weight: lighter;
+        margin: 20px 0px;
+        border: 5px !important;
+        position: relative;
+    }
+
+    ion-grid {
+        background-color: dodgerblue !important;
+    }
+    ion-col {
+        font-size: 200% !important;
+        color: white !important;
+    }
+
+    ion-row {
+        height: 7rem;
+    }
+
+
+    .button {
+        font-weight: lighter !important;
+    }
 }
