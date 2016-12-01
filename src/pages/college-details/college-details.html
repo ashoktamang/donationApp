@@ -18,7 +18,7 @@
       {{ college.title }}
     </ion-card-header>
     <ion-card-content>
-      <img src="../assets/img/howard-watermark.png"/>
+      <img src="{{ college.image }}"/>
     </ion-card-content>
   </ion-card>
   <!--Project Description-->
@@ -29,6 +29,12 @@
     <ion-card-content>
       <p> {{ college.description }} </p>
     </ion-card-content>
+  </ion-card>
+  <p> Projects </p>
+  <ion-card *ngFor="let project of college.projects" (click)="openDetailsModal({college: college}, {project: project})">
+      <ion-card-header> {{ project.title }} </ion-card-header>
+      {{ project.description }}
+      {{ project.donationAmount }}
   </ion-card>
 </ion-content>
 <ion-footer>
