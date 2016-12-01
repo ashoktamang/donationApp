@@ -31,12 +31,12 @@
     </ion-card-content>
   </ion-card>
   <p> Projects </p>
-  <ion-card *ngFor="let project of college.projects" (click)="openDetailsModal({college: college}, {project: project})">
+  <ion-card *ngFor="let project of college.projects" (click)="goToProjectDetails(college, project)">
       <ion-card-header> {{ project.title }} </ion-card-header>
       {{ project.description }}
       {{ project.donationAmount }}
   </ion-card>
 </ion-content>
-<ion-footer>
+<!--<ion-footer>
   <button ion-button item-left full large (click)="goDonate(college)"> Donate </button>
-</ion-footer>
+</ion-footer>-->
