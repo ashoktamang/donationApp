@@ -35,7 +35,7 @@ export class ThankYouPage {
 
   dismiss() {
     this.navCtrl.setRoot(HomePage);
-    this.viewCtrl.dismiss();
   }
 
 }
+    //this.viewCtrl.dismiss();

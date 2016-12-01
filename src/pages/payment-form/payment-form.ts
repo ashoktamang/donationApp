@@ -31,6 +31,7 @@ export class PaymentFormPage {
     this.college = this.params.data.college;
     this.project = this.params.data.project;
     this.donationAmount = '0';
+    console.log('hohohohoho' + this.college);
 
     this.numpad = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0', 'Delete'];
   }
@@ -72,16 +73,19 @@ export class PaymentFormPage {
   }
 
   donate() {
-    this.navCtrl.push(CardDetailsPage);
-    console.log(this.navCtrl);
+    console.log('works:' + this.navCtrl);
+
     let actionSheet = this.actionSheetCtrl.create({
       title: 'Choose your payment method.',
       buttons: [
         {
           text: 'Visa/MasterCard',
           handler: () => {
-            this.navCtrl.push(CardDetailsPage);
             console.log('visa clicked.');
+            this.navCtrl.push(CardDetailsPage, 
+                        {   college: this.college, 
+                            project: this.project, 
+                            donationAmount: this.donationAmount});
           }
         },
         {
@@ -95,5 +99,6 @@ export class PaymentFormPage {
     })
     actionSheet.present();
   }
+   // this.navCtrl.push(CardDetailsPage);
 
 }

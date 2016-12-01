@@ -18,28 +18,31 @@ import { ThankYouPage } from '../thank-you/thank-you';
 export class CardDetailsPage {
   private card = {};
   private donor = {};
+  
   college;
   donationAmount;
-  public project;
+  project;
+  
   constructor(
     public navCtrl: NavController, 
     public params: NavParams,
     public viewCtrl: ViewController,
     public platform: Platform
   ) {
-    this.college = this.params.get('college');
-    console.log(this.college);
-    this.donationAmount = this.params.get('donationAmount');
-    this.project = this.params.get('project');
+    this.college = this.params.data.college;
+    this.donationAmount = this.params.data.donationAmount;
+    this.project = this.params.data.project;
+    console.log(this.college + '<<<<<<<<<<<<<<<<<');
   }
 
   ionViewDidLoad() {
-    console.log('Hello card details Page');
+    console.log('payment info page loads');
   }
 
   donate() {
     console.log(this.card);
     console.log(this.donor);
+    // db.donationAmount += this.donationAmount
     this.navCtrl.push(ThankYouPage, { college: this.college, project: this.project, donationAmount: this.donationAmount });
     this.viewCtrl.dismiss();
   }

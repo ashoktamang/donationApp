@@ -4,11 +4,39 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content class="card-backgeround-page">
+<ion-content class="card-background-page">
   <ion-card *ngFor="let college of colleges; let i = index" (click)="openDetailsModal({college: college})">
-      <ion-card-header> {{ college.title }} </ion-card-header>
-      <img src="{{ college.image }}"/>
+      <ion-item>
+          <h2>{{ college.title }} </h2>
+      </ion-item>
 
+      <img src="{{ college.image }}">
+
+      <ion-card-content>
+          <p>{{ college.description | slice:0:218 }}... </p>
+      </ion-card-content>
+
+      <ion-row>
+          <ion-col>
+              <button ion-button icon-left clear small>
+                <ion-icon name="battery-dead"></ion-icon>
+                <div> ${{ college.total_needed - college.total_reached}} Remaining</div>
+              </button>
+          </ion-col>
+
+          <ion-col>
+              <button ion-button icon-left clear small>
+              <ion-icon name="battery-charging"></ion-icon>
+              <div>${{college.total_reached}} Reached</div>
+            </button>
+          </ion-col>
+      </ion-row>
+
+
+      <!-- 
+      <ion-card-header class="card-title" > {{ college.title }} </ion-card-header>
+      <img src="{{ college.image }}"/>
+      -->
   </ion-card>
 </ion-content>
 

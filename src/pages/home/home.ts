@@ -58,6 +58,7 @@ export class HomePage {
     
     this._data.db.once('value').then((snapshot) => {
       this.colleges = snapshot.val();
+      console.log(this.colleges.length + '><><><>');
     })
 
     
