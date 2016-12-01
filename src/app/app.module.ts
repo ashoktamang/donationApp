@@ -3,6 +3,7 @@ import { IonicApp, IonicModule } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { CollegeDetailsPage } from '../pages/college-details/college-details';
+import { ProjectDetailsPage } from '../pages/project-details/project-details';
 import { PaymentFormPage } from '../pages/payment-form/payment-form';
 import { DonationPage } from '../pages/donation/donation';
 import { ThankYouPage } from '../pages/thank-you/thank-you';
@@ -13,6 +14,7 @@ import { CardDetailsPage } from '../pages/card-details/card-details';
     MyApp,
     HomePage,
     CollegeDetailsPage,
+    ProjectDetailsPage,
     PaymentFormPage,
     DonationPage,
     CardDetailsPage,
@@ -26,6 +28,7 @@ import { CardDetailsPage } from '../pages/card-details/card-details';
     MyApp,
     HomePage,
     CollegeDetailsPage,
+    ProjectDetailsPage,
     PaymentFormPage,
     DonationPage,
     CardDetailsPage,
