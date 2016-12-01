@@ -1,8 +1,7 @@
 page-home {
-    ion-card {
-    position: relative;
-    text-align: center;
-    max-height: 40%;
+  .card-header{
+      background-color: #00bcd4;
+      color: white;
   }
 
   .card-title {
@@ -12,5 +11,6 @@ page-home {
     width: 100%;
     font-weight: bold;
     color: white;
+    background-color: black;
   }
 }

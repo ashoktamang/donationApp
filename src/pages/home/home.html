@@ -8,7 +8,7 @@
   <ion-card *ngFor="let college of colleges; let i = index" (click)="openDetailsModal({college: college})">
       <ion-card-header> {{ college.title }} </ion-card-header>
       <img src="{{ college.image }}"/>
-    <!--<div class="card-title"> {{ college.title }} </div>-->
+
   </ion-card>
   <button (click)="addcollege()">Clcick</button>
 </ion-content>
