@@ -61,8 +61,8 @@ export class HomePage {
     }), 0)
   }
 
-  openDetailsModal(index) {
-    let modal = this.modalCtrl.create(CollegeDetailsPage, index);
+  openDetailsModal(college) {
+    let modal = this.modalCtrl.create(CollegeDetailsPage, college);
     modal.present();
   }
 
