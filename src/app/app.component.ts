@@ -4,6 +4,7 @@ import { StatusBar, Splashscreen } from 'ionic-native';
 
 import { HomePage } from '../pages/home/home';
 import { PaymentFormPage } from '../pages/payment-form/payment-form';
+import { CardDetailsPage } from '../pages/card-details/card-details';
 
 import * as firebase from 'firebase';
 
@@ -12,7 +13,7 @@ import * as firebase from 'firebase';
   template: `<ion-nav [root]="rootPage"></ion-nav>`
 })
 export class MyApp {
-  rootPage = PaymentFormPage;
+  rootPage = HomePage;
 
   constructor(platform: Platform) {
     const fbConf = {
