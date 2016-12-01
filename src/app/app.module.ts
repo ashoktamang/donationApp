@@ -1,21 +1,21 @@
 import { NgModule } from '@angular/core';
 import { IonicApp, IonicModule } from 'ionic-angular';
 import { MyApp } from './app.component';
-import { AboutPage } from '../pages/about/about';
 import { HomePage } from '../pages/home/home';
 import { CollegeDetailsPage } from '../pages/college-details/college-details';
 import { PaymentFormPage } from '../pages/payment-form/payment-form';
 import { DonationPage } from '../pages/donation/donation';
 import { ThankYouPage } from '../pages/thank-you/thank-you';
+import { CardDetailsPage } from '../pages/card-details/card-details';
 
 @NgModule({
   declarations: [
     MyApp,
-    AboutPage,
     HomePage,
     CollegeDetailsPage,
     PaymentFormPage,
     DonationPage,
+    CardDetailsPage,
     ThankYouPage
   ],
   imports: [
@@ -24,11 +24,11 @@ import { ThankYouPage } from '../pages/thank-you/thank-you';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    AboutPage,
     HomePage,
     CollegeDetailsPage,
     PaymentFormPage,
     DonationPage,
+    CardDetailsPage,
     ThankYouPage
   ],
   providers: []
