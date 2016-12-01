@@ -19665,3 +19665,29 @@ page-payment-form .col {
   border-radius: 8px !important;
   padding: 15px 0px !important;
 }
+
+page-payment-form .amount {
+  font-size: 8rem;
+  text-align: center;
+  font-weight: lighter;
+  margin: 20px 0px;
+  border: 5px !important;
+  position: relative;
+}
+
+page-payment-form ion-grid {
+  background-color: dodgerblue !important;
+}
+
+page-payment-form ion-col {
+  font-size: 200% !important;
+  color: white !important;
+}
+
+page-payment-form ion-row {
+  height: 7rem;
+}
+
+page-payment-form .button {
+  font-weight: lighter !important;
+}

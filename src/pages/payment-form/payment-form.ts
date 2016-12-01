@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ModalController, NavParams, AlertController } from 'ionic-angular';
+import { ModalController, NavParams, AlertController, ActionSheetController } from 'ionic-angular';
 import { ThankYouPage } from '../thank-you/thank-you';
 
 /*
@@ -15,15 +15,19 @@ import { ThankYouPage } from '../thank-you/thank-you';
 export class PaymentFormPage {
 
   college;
+  numpad;
   donationAmount; // Minimum donation amount is $1.
 
   constructor (
     public modalCtrl: ModalController,
     public params: NavParams, 
     public alertCtrl: AlertController,
+    public actionSheetCtrl: ActionSheetController
   ) {
     this.college = this.params.data.college;
     this.donationAmount = '0';
+
+    this.numpad = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0', 'Delete'];
   }
 
   ionViewDidLoad() {
